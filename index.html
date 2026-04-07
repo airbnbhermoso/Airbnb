@@ -428,3 +428,266 @@
 
 
 
+TENGO ESTA PAGINA PRINICPAL, Y QUIERO QUE ESTE FORMATO O HASTA MEJOR LO DES A ESTA SUBPAGINA FDE LA MISMA:
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosas que hacer en Boca del Río</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de tener el archivo CSS enlazado -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #007acc;
+            color: white;
+            padding: 40px 20px;
+            position: relative;
+            text-align: center; /* Centra el título */
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        
+        nav {
+            position: absolute;
+            left: 20px; /* Alinea el botón a la izquierda */
+            top: 50%;
+            transform: translateY(-50%); /* Centra verticalmente el botón en la barra */
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid white;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: white;
+            color: #007acc;
+        }
+
+
+
+
+        #actividades {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .property {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .property:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .property img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .property h2 {
+            color: #ff5a5f;
+            font-size: 1.5em;
+            margin: 15px 0 10px;
+        }
+
+        .property p {
+            padding: 0 15px;
+            font-size: 1em;
+            color: #555;
+        }
+
+        .property strong {
+            color: #007acc;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #007acc;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1em;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .property {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Atracciones en Boca del Río</h1>
+        <nav>
+            <a href="index.html">Menú</a>
+        </nav>
+    </header>
+
+
+    <section id="actividades">
+        <h2 style="margin-top: 20px;">Actividades en Boca del Río</h2>
+        <div class="container">
+            
+            <!-- Andamar -->
+            <div class="property">
+                <h2>Andamar Lifestyle Center</h2>
+                <img src="andamar.jpg" alt="Centro Comercial Andamar">
+                <p>Un centro comercial de lujo con tiendas de moda, restaurantes, y opciones de entretenimiento. Ideal para compras y una experiencia gastronómica variada.</p>
+                <p><strong>Dirección:</strong> Bv. Adolfo Ruíz Cortines 4300, Mocambo, 94298 Veracruz, Ver.</p>
+            </div>
+
+            <!-- El Dorado -->
+            <div class="property">
+                <h2>El Dorado</h2>
+                <img src="DORADO.jpg" alt="Centro Comercial El Dorado">
+                <p>Centro comercial con una vista espectacular de la laguna, tiendas, restaurantes, y bares. Perfecto para disfrutar al aire libre.</p>
+                <p><strong>Dirección:</strong> Carr. Federal Paso del Toro, Antón Lizardo 4405, El Novillero, 94290 Boca del Río, Ver.</p>
+            </div>
+
+            <!-- Isla de Enmedio -->
+            <div class="property">
+                <h2>Isla de Enmedio</h2>
+                <img src="isla-de-enmedio-veracruz-1-2.webp" alt="Isla de Enmedio">
+                <p>Parte de la Reserva Natural de Veracruz. Ideal para snorkel, kayak y explorar playas vírgenes.</p>
+                <p><strong>Cómo llegar:</strong> Desde Antón Lizardo o buscando una agencia de tours. Puedes reservar recorridos de kayak o lancha con agencias como <a href="https://www.monkeyfish.com.mx/kayak-veracruz-isla-de-sacrificios" target="_blank">Monkey Fish</a>, que también ofrecen kayaks a la Isla de Sacrificios.</p>
+            </div>
+
+            <!-- Cancuncito -->
+            <div class="property">
+                <h2>Cancuncito e Isla de Sacrificios</h2>
+                <img src="SACRIFICIOS.jpg" alt="Cancuncito">
+                <p>Se cree que la formación de este islote rodeado de aguas turquesa se originó gracias a los movimientos del viento y ciertas corrientes provocadas por el huracán Gilberto en 1988.</p>
+                <p>Perfecto para aquellos viajeros que buscan disfrutar de la belleza natural y explorar la cultura de la región.</p>
+                <p><strong>Cómo llegar:</strong> Desde Plaza Acuario en Playa Villa del Mar a partir de las 9 AM. El recorrido dura de dos a tres horas y cuesta desde 250 pesos por persona.</p>
+            </div>
+
+            <!-- Acuático Inbursa -->
+            <div class="property">
+                <h2>Acuático Inbursa</h2>
+                <img src="acuatico_inbursa.jpg" alt="Acuático Inbursa">
+                <p>Parque acuático con toboganes, áreas de juegos y piscinas. Perfecto para disfrutar en familia.</p>
+                <p><strong>Dirección:</strong> P.º del Parque 873, Fraccionamiento Nuevo, 91726 Veracruz, Ver.</p>
+            </div>
+
+            <!-- Acuario de Veracruz -->
+            <div class="property">
+                <h2>Acuario de Veracruz</h2>
+                <img src="El-acuario-de-Veracruz-ahora-Aquarium.webp" alt="Acuario de Veracruz">
+                <p>Conoce diferentes especies marinas y disfruta de exhibiciones interactivas en uno de los acuarios más grandes de México.</p>
+                <p><strong>Dirección:</strong> Blvd. Manuel Ávila Camacho S/n-Int. 25, Ricardo Flores Magón, 91900 Veracruz, Ver.</p>
+            </div>
+
+            <!-- San Juan de Ulúa -->
+            <div class="property">
+                <h2>San Juan de Ulúa</h2>
+                <img src="ulua.png" alt="San Juan de Ulúa">
+                <p>Construido en 1535, fue clave para el comercio del virreinato y defensa del puerto, con cuatro baluartes principales. Este fuerte fue testigo de importantes eventos históricos, incluyendo la intervención francesa de 1838 y las estadounidenses de 1847 y 1914.</p>
+                <p><strong>Dirección:</strong> Cam. Escénico a San Juan de Ulúa S/N, Manuel Contreras, 91891 Veracruz, Ver.</p>
+            </div>
+
+            <!-- Mariscos Villarica -->
+            <div class="property">
+                <h2>Mariscos Villarica</h2>
+                <img src="villa_rica.jpg" alt="Mariscos Villarica">
+                <p>Disfruta de los auténticos mariscos frescos de Veracruz, ubicados a la orilla de la playa.</p>
+                <p><strong>Dirección:</strong> Cuenta con distintas sucursales, pero nuestra favorita se encuentra en C. Mocambo 527, Playa de Oro, 94290 Boca del Río, Ver.</p>
+            </div>
+
+            <!-- Laguna de Mandinga -->
+            <div class="property">
+                <h2>Laguna de Mandinga</h2>
+                <img src="mandinga.jpg" alt="Laguna de Mandinga">
+                <p>Un hermoso cuerpo de agua ideal para paseos en lancha y disfrutar de la naturaleza. Se ofrecen recorridos en kayak y pesca.</p>
+                <p><strong>Dirección:</strong> Carr. Mandinga, 95266 Antón Lizardo, Ver.</p>
+            </div>
+
+            <!-- Restaurante La Parroquia -->
+            <div class="property">
+                <h2>Restaurante La Parroquia</h2>
+                <img src="parroquia.webp" alt="Restaurante La Parroquia">
+                <p>Famoso por su café y ambiente tradicional. Un lugar imperdible en Veracruz.</p>
+                <p><strong>Dirección:</strong> Cuenta con distitntas sucursales, nuestras favoritas están ubicadas en "Gabriel Garzón Cossa 212, Reforma, 91919 Veracruz, Ver." y la más tradicional ubicada en "Av. Valentín Gómez Farías 34, Faros, 91700 Veracruz, Ver."</p>
+            </div>
+
+            <!-- Restaurante Farolitos -->
+            <div class="property">
+                <h2>Restaurante Farolitos</h2>
+                <img src="farolitos.jpg" alt="Restaurante Farolitos">
+                <p>Especialidad en cocina mexicana. Ideal para probar platillos típicos de Veracruz.</p>
+                <p><strong>Dirección:</strong> Cuenta con distintas sucursales pero nuestra favorita se encuentra en Av Cristóbal Colón 506, Reforma, 91919 Veracruz, Ver.</p>
+            </div>
+            <!-- Roca Partida -->
+            <div class="property">
+                <h2>Roca Partida</h2>
+                <img src="roca_partida.png" alt="Roca Partida, Veracruz">
+                <p>Roca Partida es una formación rocosa impresionante y un paraíso natural en la costa veracruzana, ideal para quienes buscan aventura y paisajes únicos. Con su combinación de acantilados, playas solitarias y aguas cristalinas, es perfecta para actividades como el senderismo, la fotografía y el snorkel. </p>
+                <p><strong>Ubicación:</strong> Punta Roca Partida, 95802 Ver.</p>
+            </div>
+            <!-- Chachalacas -->
+            <div class="property">
+                <h2>Playa Chachalacas</h2>
+                <img src="chachalacas.png" alt="Playa Chachalacas, Veracruz">
+                <p>La Playa Chachalacas es un destino único en Veracruz, famoso por sus extensas dunas de arena, que ofrecen un paisaje espectacular y un sinfín de actividades al aire libre. Además de disfrutar de la playa, puedes practicar deportes como el sandboarding, paseos en cuatrimoto y recorridos en vehículos todo terreno a través de las dunas.</p>
+                <p><strong>Ubicación:</strong> Playa Chachalacas, 91666 Ver.</p>
+            </div>
+            <!-- Cuatro Hermanos -->
+            <div class="property">
+                <h2>Restaurante Cuatro Hermanos</h2>
+                <img src="cuatro.png" alt="Restaurante Cuatro Hermanos">
+                <p>Cuatro Hermanos es un restaurante local conocido por sus deliciosos antojitos tradicionales veracruzanos, como picadas, gorditas y empanadas. Un lugar local para disfrutar de la auténtica comida de la región.</p>
+                <p><strong>Ubicación:</strong> Bv. Adolfo Ruíz Cortines esq, Costa Verde, Ver.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Mis Propiedades en Airbnb. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
+
+
