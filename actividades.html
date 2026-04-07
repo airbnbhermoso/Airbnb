@@ -1,261 +1,396 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosas que hacer en Boca del Río</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de tener el archivo CSS enlazado -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
-
-        header {
-            background-color: #007acc;
-            color: white;
-            padding: 40px 20px;
-            position: relative;
-            text-align: center; /* Centra el título */
-        }
-        
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-        
-        nav {
-            position: absolute;
-            left: 20px; /* Alinea el botón a la izquierda */
-            top: 50%;
-            transform: translateY(-50%); /* Centra verticalmente el botón en la barra */
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 20px;
-            border: 2px solid white;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        
-        nav a:hover {
-            background-color: white;
-            color: #007acc;
-        }
-
-
-
-
-        #actividades {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .property {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .property:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .property img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .property h2 {
-            color: #ff5a5f;
-            font-size: 1.5em;
-            margin: 15px 0 10px;
-        }
-
-        .property p {
-            padding: 0 15px;
-            font-size: 1em;
-            color: #555;
-        }
-
-        .property strong {
-            color: #007acc;
-            font-weight: bold;
-        }
-
-        footer {
-            background-color: #007acc;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 1em;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .property {
-                width: 90%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qué hacer en Boca del Río · Hospedaje Hermoso</title>
+  <meta name="description" content="Descubre las mejores atracciones, restaurantes y actividades en Boca del Río, Veracruz. Guía completa para huéspedes de Hospedaje Hermoso." />
+  <meta name="keywords" content="Boca del Río, Veracruz, atracciones, qué hacer, turismo, playas, restaurantes" />
+  <meta property="og:title" content="Qué hacer en Boca del Río · Hospedaje Hermoso" />
+  <meta property="og:description" content="Playas, mariscos, cultura y el Golfo de México. Guía de atracciones para tus vacaciones en Boca del Río." />
+  <meta property="og:type" content="website" />
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+ 
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rose: #ff5a5f; --rose-dk: #e03f44; --rose-lt: #fff0f0;
+      --cream: #fef9f4; --sand: #f5efe6;
+      --ink: #1a1a2e; --mid: #4a5568; --muted: #8a9ab5; --white: #ffffff;
+      --r: 16px; --rl: 24px;
+      --sh: 0 4px 20px rgba(0,0,0,0.08); --shl: 0 16px 48px rgba(0,0,0,0.14);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; }
+ 
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(254,249,244,0.9); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(0,0,0,0.07); transition: box-shadow .3s; }
+    nav.scrolled { box-shadow: var(--sh); }
+    .nav-inner { max-width: 1180px; margin: 0 auto; padding: 0 28px; height: 66px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 900; color: var(--rose); text-decoration: none; }
+    .nav-logo span { color: var(--ink); font-weight: 700; }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .nav-back { display: inline-flex; align-items: center; gap: 7px; font-size: 0.85rem; font-weight: 600; color: var(--mid); text-decoration: none; padding: 8px 16px; border-radius: 50px; border: 1.5px solid rgba(0,0,0,0.12); transition: all .2s; }
+    .nav-back:hover { background: var(--rose); color: white; border-color: var(--rose); }
+    .wa-nav { display: flex; align-items: center; gap: 7px; background: #25D366; color: white; padding: 9px 18px; border-radius: 50px; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: background .2s, transform .15s; }
+    .wa-nav:hover { background: #1fb958; transform: translateY(-1px); }
+    .wa-nav svg { width: 16px; height: 16px; fill: white; }
+ 
+    /* HERO */
+    .page-hero { padding-top: 66px; min-height: 52vh; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+    .hero-left { background: linear-gradient(155deg, #ff5a5f 0%, #c73b40 100%); display: flex; flex-direction: column; justify-content: center; padding: 72px 56px; position: relative; overflow: hidden; }
+    .hero-left::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; background: rgba(255,255,255,0.07); }
+    .hero-left::after { content: ''; position: absolute; bottom: -50px; left: -50px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+    .hero-kicker { font-size: 0.72rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+    .hero-title { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 900; line-height: 1.1; color: white; margin-bottom: 18px; }
+    .hero-title em { font-style: italic; opacity: .85; }
+    .hero-sub { font-size: 0.98rem; color: rgba(255,255,255,0.75); font-weight: 300; max-width: 360px; line-height: 1.75; margin-bottom: 32px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 9px; }
+    .hpill { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: white; padding: 5px 13px; border-radius: 50px; font-size: 0.78rem; font-weight: 500; }
+    .hero-right { position: relative; overflow: hidden; background: #1a0808; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; opacity: .8; transition: transform 8s ease; }
+    .hero-right:hover img { transform: scale(1.04); }
+    .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(199,59,64,.55) 0%, transparent 40%); pointer-events: none; }
+    .hero-count { position: absolute; bottom: 24px; right: 24px; z-index: 5; background: white; border-radius: var(--r); padding: 14px 20px; display: flex; align-items: center; gap: 16px; box-shadow: var(--shl); animation: bob 3.5s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    .hc-num { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 900; color: var(--rose); line-height: 1; }
+    .hc-lbl { font-size: 0.67rem; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; }
+    .hc-div { width: 1px; height: 32px; background: rgba(0,0,0,.1); }
+ 
+    /* FILTER BAR */
+    .filter-bar { background: var(--white); border-bottom: 1px solid rgba(0,0,0,.07); position: sticky; top: 66px; z-index: 80; }
+    .filter-inner { max-width: 1180px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; gap: 10px; height: 58px; overflow-x: auto; scrollbar-width: none; }
+    .filter-inner::-webkit-scrollbar { display: none; }
+    .f-btn { flex-shrink: 0; padding: 7px 17px; border-radius: 50px; border: 1.5px solid rgba(0,0,0,.12); background: transparent; color: var(--mid); font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: all .2s; white-space: nowrap; }
+    .f-btn:hover, .f-btn.active { background: var(--rose); color: white; border-color: var(--rose); }
+    .f-count { margin-left: auto; flex-shrink: 0; font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+ 
+    /* CARDS */
+    #actividades { padding: 80px 28px 100px; }
+    .section-head { max-width: 1180px; margin: 0 auto 52px; }
+    .s-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rose); margin-bottom: 10px; }
+    .s-title { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 900; color: var(--ink); line-height: 1.15; margin-bottom: 12px; }
+    .s-sub { font-size: 0.95rem; color: var(--muted); max-width: 480px; }
+    .cards-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .card { background: var(--white); border-radius: var(--rl); overflow: hidden; box-shadow: var(--sh); transition: transform .3s, box-shadow .3s; display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-8px); box-shadow: var(--shl); }
+    .card-img { position: relative; height: 210px; overflow: hidden; background: #f0e0d0; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .card:hover .card-img img { transform: scale(1.08); }
+    .card-badge { position: absolute; top: 13px; left: 13px; background: white; color: var(--rose); font-size: 0.68rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; padding: 4px 11px; border-radius: 50px; }
+    .card-body { padding: 22px 24px 26px; flex: 1; display: flex; flex-direction: column; }
+    .card-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 9px; line-height: 1.25; }
+    .card-desc { font-size: 0.84rem; color: var(--mid); line-height: 1.7; flex: 1; margin-bottom: 16px; }
+    .card-addr { display: flex; align-items: flex-start; gap: 7px; font-size: 0.77rem; color: var(--muted); padding-top: 14px; border-top: 1px solid rgba(0,0,0,.07); }
+    .card-addr .pin { color: var(--rose); font-size: 0.88rem; flex-shrink: 0; margin-top: 1px; }
+    .card-addr a { color: var(--rose); font-weight: 600; text-decoration: none; }
+    .card-addr a:hover { text-decoration: underline; }
+    .card-wide { grid-column: span 2; }
+    .card-wide .card-img { height: 240px; }
+ 
+    /* FOOTER */
+    footer { background: var(--ink); color: rgba(255,255,255,.5); padding: 60px 28px 36px; }
+    .footer-inner { max-width: 1180px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; margin-bottom: 48px; }
+    .footer-brand { max-width: 300px; }
+    .footer-logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; color: white; text-decoration: none; display: block; margin-bottom: 12px; }
+    .footer-logo span { color: var(--rose); }
+    .footer-brand p { font-size: 0.83rem; line-height: 1.7; }
+    .footer-col h5 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,.85); margin-bottom: 18px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { font-size: 0.83rem; color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .footer-col ul a:hover { color: rgba(255,90,95,.8); }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.08); font-size: 0.78rem; flex-wrap: wrap; gap: 10px; }
+ 
+    /* WA FLOAT */
+    .wa-float { position: fixed; bottom: 26px; right: 26px; z-index: 999; display: flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 13px 20px 13px 14px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: 600; box-shadow: 0 6px 28px rgba(37,211,102,.4); transition: transform .2s; animation: wpulse 2.8s ease-in-out infinite; }
+    .wa-float:hover { transform: translateY(-3px) scale(1.03); animation: none; }
+    .wa-float svg { width: 22px; height: 22px; fill: white; }
+    @keyframes wpulse { 0%,100% { box-shadow: 0 6px 28px rgba(37,211,102,.4); } 50% { box-shadow: 0 6px 40px rgba(37,211,102,.65); } }
+ 
+    /* FADE */
+    .fade { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .fade.on { opacity: 1; transform: translateY(0); }
+ 
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .page-hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 72px 32px 56px; }
+      .hero-right { height: 300px; }
+      .cards-grid { grid-template-columns: 1fr 1fr; }
+      .card-wide { grid-column: span 1; }
+    }
+    @media (max-width: 600px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .wa-float span { display: none; }
+      .wa-float { padding: 13px; border-radius: 50%; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Atracciones en Boca del Río</h1>
-        <nav>
-            <a href="index.html">Menú</a>
-        </nav>
-    </header>
-
-
-    <section id="actividades">
-        <h2 style="margin-top: 20px;">Actividades en Boca del Río</h2>
-        <div class="container">
-            
-            <!-- Andamar -->
-            <div class="property">
-                <h2>Andamar Lifestyle Center</h2>
-                <img src="andamar.jpg" alt="Centro Comercial Andamar">
-                <p>Un centro comercial de lujo con tiendas de moda, restaurantes, y opciones de entretenimiento. Ideal para compras y una experiencia gastronómica variada.</p>
-                <p><strong>Dirección:</strong> Bv. Adolfo Ruíz Cortines 4300, Mocambo, 94298 Veracruz, Ver.</p>
-            </div>
-
-            <!-- El Dorado -->
-            <div class="property">
-                <h2>El Dorado</h2>
-                <img src="DORADO.jpg" alt="Centro Comercial El Dorado">
-                <p>Centro comercial con una vista espectacular de la laguna, tiendas, restaurantes, y bares. Perfecto para disfrutar al aire libre.</p>
-                <p><strong>Dirección:</strong> Carr. Federal Paso del Toro, Antón Lizardo 4405, El Novillero, 94290 Boca del Río, Ver.</p>
-            </div>
-
-            <!-- Isla de Enmedio -->
-            <div class="property">
-                <h2>Isla de Enmedio</h2>
-                <img src="isla-de-enmedio-veracruz-1-2.webp" alt="Isla de Enmedio">
-                <p>Parte de la Reserva Natural de Veracruz. Ideal para snorkel, kayak y explorar playas vírgenes.</p>
-                <p><strong>Cómo llegar:</strong> Desde Antón Lizardo o buscando una agencia de tours. Puedes reservar recorridos de kayak o lancha con agencias como <a href="https://www.monkeyfish.com.mx/kayak-veracruz-isla-de-sacrificios" target="_blank">Monkey Fish</a>, que también ofrecen kayaks a la Isla de Sacrificios.</p>
-            </div>
-
-            <!-- Cancuncito -->
-            <div class="property">
-                <h2>Cancuncito e Isla de Sacrificios</h2>
-                <img src="SACRIFICIOS.jpg" alt="Cancuncito">
-                <p>Se cree que la formación de este islote rodeado de aguas turquesa se originó gracias a los movimientos del viento y ciertas corrientes provocadas por el huracán Gilberto en 1988.</p>
-                <p>Perfecto para aquellos viajeros que buscan disfrutar de la belleza natural y explorar la cultura de la región.</p>
-                <p><strong>Cómo llegar:</strong> Desde Plaza Acuario en Playa Villa del Mar a partir de las 9 AM. El recorrido dura de dos a tres horas y cuesta desde 250 pesos por persona.</p>
-            </div>
-
-            <!-- Acuático Inbursa -->
-            <div class="property">
-                <h2>Acuático Inbursa</h2>
-                <img src="acuatico_inbursa.jpg" alt="Acuático Inbursa">
-                <p>Parque acuático con toboganes, áreas de juegos y piscinas. Perfecto para disfrutar en familia.</p>
-                <p><strong>Dirección:</strong> P.º del Parque 873, Fraccionamiento Nuevo, 91726 Veracruz, Ver.</p>
-            </div>
-
-            <!-- Acuario de Veracruz -->
-            <div class="property">
-                <h2>Acuario de Veracruz</h2>
-                <img src="El-acuario-de-Veracruz-ahora-Aquarium.webp" alt="Acuario de Veracruz">
-                <p>Conoce diferentes especies marinas y disfruta de exhibiciones interactivas en uno de los acuarios más grandes de México.</p>
-                <p><strong>Dirección:</strong> Blvd. Manuel Ávila Camacho S/n-Int. 25, Ricardo Flores Magón, 91900 Veracruz, Ver.</p>
-            </div>
-
-            <!-- San Juan de Ulúa -->
-            <div class="property">
-                <h2>San Juan de Ulúa</h2>
-                <img src="ulua.png" alt="San Juan de Ulúa">
-                <p>Construido en 1535, fue clave para el comercio del virreinato y defensa del puerto, con cuatro baluartes principales. Este fuerte fue testigo de importantes eventos históricos, incluyendo la intervención francesa de 1838 y las estadounidenses de 1847 y 1914.</p>
-                <p><strong>Dirección:</strong> Cam. Escénico a San Juan de Ulúa S/N, Manuel Contreras, 91891 Veracruz, Ver.</p>
-            </div>
-
-            <!-- Mariscos Villarica -->
-            <div class="property">
-                <h2>Mariscos Villarica</h2>
-                <img src="villa_rica.jpg" alt="Mariscos Villarica">
-                <p>Disfruta de los auténticos mariscos frescos de Veracruz, ubicados a la orilla de la playa.</p>
-                <p><strong>Dirección:</strong> Cuenta con distintas sucursales, pero nuestra favorita se encuentra en C. Mocambo 527, Playa de Oro, 94290 Boca del Río, Ver.</p>
-            </div>
-
-            <!-- Laguna de Mandinga -->
-            <div class="property">
-                <h2>Laguna de Mandinga</h2>
-                <img src="mandinga.jpg" alt="Laguna de Mandinga">
-                <p>Un hermoso cuerpo de agua ideal para paseos en lancha y disfrutar de la naturaleza. Se ofrecen recorridos en kayak y pesca.</p>
-                <p><strong>Dirección:</strong> Carr. Mandinga, 95266 Antón Lizardo, Ver.</p>
-            </div>
-
-            <!-- Restaurante La Parroquia -->
-            <div class="property">
-                <h2>Restaurante La Parroquia</h2>
-                <img src="parroquia.webp" alt="Restaurante La Parroquia">
-                <p>Famoso por su café y ambiente tradicional. Un lugar imperdible en Veracruz.</p>
-                <p><strong>Dirección:</strong> Cuenta con distitntas sucursales, nuestras favoritas están ubicadas en "Gabriel Garzón Cossa 212, Reforma, 91919 Veracruz, Ver." y la más tradicional ubicada en "Av. Valentín Gómez Farías 34, Faros, 91700 Veracruz, Ver."</p>
-            </div>
-
-            <!-- Restaurante Farolitos -->
-            <div class="property">
-                <h2>Restaurante Farolitos</h2>
-                <img src="farolitos.jpg" alt="Restaurante Farolitos">
-                <p>Especialidad en cocina mexicana. Ideal para probar platillos típicos de Veracruz.</p>
-                <p><strong>Dirección:</strong> Cuenta con distintas sucursales pero nuestra favorita se encuentra en Av Cristóbal Colón 506, Reforma, 91919 Veracruz, Ver.</p>
-            </div>
-            <!-- Roca Partida -->
-            <div class="property">
-                <h2>Roca Partida</h2>
-                <img src="roca_partida.png" alt="Roca Partida, Veracruz">
-                <p>Roca Partida es una formación rocosa impresionante y un paraíso natural en la costa veracruzana, ideal para quienes buscan aventura y paisajes únicos. Con su combinación de acantilados, playas solitarias y aguas cristalinas, es perfecta para actividades como el senderismo, la fotografía y el snorkel. </p>
-                <p><strong>Ubicación:</strong> Punta Roca Partida, 95802 Ver.</p>
-            </div>
-            <!-- Chachalacas -->
-            <div class="property">
-                <h2>Playa Chachalacas</h2>
-                <img src="chachalacas.png" alt="Playa Chachalacas, Veracruz">
-                <p>La Playa Chachalacas es un destino único en Veracruz, famoso por sus extensas dunas de arena, que ofrecen un paisaje espectacular y un sinfín de actividades al aire libre. Además de disfrutar de la playa, puedes practicar deportes como el sandboarding, paseos en cuatrimoto y recorridos en vehículos todo terreno a través de las dunas.</p>
-                <p><strong>Ubicación:</strong> Playa Chachalacas, 91666 Ver.</p>
-            </div>
-            <!-- Cuatro Hermanos -->
-            <div class="property">
-                <h2>Restaurante Cuatro Hermanos</h2>
-                <img src="cuatro.png" alt="Restaurante Cuatro Hermanos">
-                <p>Cuatro Hermanos es un restaurante local conocido por sus deliciosos antojitos tradicionales veracruzanos, como picadas, gorditas y empanadas. Un lugar local para disfrutar de la auténtica comida de la región.</p>
-                <p><strong>Ubicación:</strong> Bv. Adolfo Ruíz Cortines esq, Costa Verde, Ver.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Mis Propiedades en Airbnb. Todos los derechos reservados.</p>
-    </footer>
+ 
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Hospedaje <span>Hermoso</span></a>
+    <div class="nav-right">
+      <a class="nav-back" href="index.html">← Inicio</a>
+      <a class="wa-nav" href="https://wa.me/5951219281" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
+ 
+<section class="page-hero">
+  <div class="hero-left">
+    <p class="hero-kicker">Guía de viajero · Veracruz</p>
+    <h1 class="hero-title">Lo mejor de<br/><em>Boca del Río</em></h1>
+    <p class="hero-sub">Desde arrecifes de coral y lagunas silvestres hasta antojitos auténticos y centros históricos. Todo lo que necesitas para vivir Veracruz de verdad.</p>
+    <div class="hero-pills">
+      <span class="hpill">🏖 Playas</span>
+      <span class="hpill">🐠 Snorkel</span>
+      <span class="hpill">🍤 Mariscos</span>
+      <span class="hpill">🏛 Historia</span>
+      <span class="hpill">🛍 Compras</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="boca_del_rio.png" alt="Boca del Río"
+         onerror="this.src='https://images.unsplash.com/photo-1534447677768-be436bb09401?w=900&q=80'" />
+    <div class="hero-count">
+      <div><div class="hc-num">14</div><div class="hc-lbl">Lugares</div></div>
+      <div class="hc-div"></div>
+      <div><div class="hc-num">5+</div><div class="hc-lbl">Playas</div></div>
+      <div class="hc-div"></div>
+      <div><div class="hc-num">4</div><div class="hc-lbl">Restaurantes</div></div>
+    </div>
+  </div>
+</section>
+ 
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="f-btn active" onclick="filterCards('all',this)">Todos</button>
+    <button class="f-btn" onclick="filterCards('compras',this)">🛍 Compras</button>
+    <button class="f-btn" onclick="filterCards('naturaleza',this)">🌿 Naturaleza</button>
+    <button class="f-btn" onclick="filterCards('cultura',this)">🏛 Cultura</button>
+    <button class="f-btn" onclick="filterCards('gastronomia',this)">🍽 Gastronomía</button>
+    <button class="f-btn" onclick="filterCards('aventura',this)">🤿 Aventura</button>
+    <span class="f-count" id="fCount">14 lugares</span>
+  </div>
+</div>
+ 
+<section id="actividades">
+  <div class="section-head fade">
+    <p class="s-tag">Atracciones seleccionadas</p>
+    <h2 class="s-title">Descubre Boca del Río</h2>
+    <p class="s-sub">Nuestras recomendaciones personales para aprovechar al máximo tu estancia.</p>
+  </div>
+ 
+  <div class="cards-grid" id="cardsGrid">
+ 
+    <div class="card fade" data-cat="compras">
+      <div class="card-img"><img src="andamar.jpg" alt="Andamar" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Compras</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Andamar Lifestyle Center</h3>
+        <p class="card-desc">Centro comercial de lujo con tiendas de moda, restaurantes y entretenimiento. Ideal para compras y una experiencia gastronómica variada.</p>
+        <div class="card-addr"><span class="pin">📍</span>Bv. Adolfo Ruíz Cortines 4300, Mocambo, 94298 Veracruz, Ver.</div>
+      </div>
+    </div>
+ 
+    <div class="card fade" data-cat="compras">
+      <div class="card-img"><img src="DORADO.jpg" alt="El Dorado" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Compras</span></div>
+      <div class="card-body">
+        <h3 class="card-title">El Dorado</h3>
+        <p class="card-desc">Centro comercial con vista espectacular de la laguna, tiendas, restaurantes y bares. Perfecto para disfrutar al aire libre.</p>
+        <div class="card-addr"><span class="pin">📍</span>Carr. Federal Paso del Toro, Antón Lizardo 4405, El Novillero, 94290 Boca del Río, Ver.</div>
+      </div>
+    </div>
+ 
+    <div class="card fade" data-cat="naturaleza aventura">
+      <div class="card-img"><img src="isla-de-enmedio-veracruz-1-2.webp" alt="Isla de Enmedio" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Naturaleza</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Isla de Enmedio</h3>
+        <p class="card-desc">Parte de la Reserva Natural de Veracruz. Ideal para snorkel, kayak y explorar playas vírgenes lejos del bullicio.</p>
+        <div class="card-addr"><span class="pin">📍</span>Tours con <a href="https://www.monkeyfish.com.mx/kayak-veracruz-isla-de-sacrificios" target="_blank">Monkey Fish</a> — kayaks a Isla de Sacrificios incluidos. Salida desde Antón Lizardo.</div>
+      </div>
+    </div>
+ 
+    <div class="card card-wide fade" data-cat="naturaleza aventura">
+      <div class="card-img"><img src="SACRIFICIOS.jpg" alt="Cancuncito" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Aventura</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Cancuncito e Isla de Sacrificios</h3>
+        <p class="card-desc">Islote de aguas turquesa formado por las corrientes del huracán Gilberto (1988). Perfecto para quienes buscan belleza natural y cultura regional en un solo recorrido.</p>
+        <div class="card-addr"><span class="pin">📍</span>Salida desde Plaza Acuario en Playa Villa del Mar a partir de las 9 AM · Recorrido 2–3 horas · Desde $250 por persona.</div>
+      </div>
+    </div>
+ 
+    <div class="card fade" data-cat="aventura">
+      <div class="card-img"><img src="acuatico_inbursa.jpg" alt="Acuático Inbursa" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Parque</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Acuático Inbursa</h3>
+        <p class="card-desc">Parque acuático con toboganes, áreas de juegos y piscinas. La opción perfecta para disfrutar en familia.</p>
+        <div class="card-addr"><span class="pin">📍</span>P.º del Parque 873, Fraccionamiento Nuevo, 91726 Veracruz, Ver.</div>
+      </div>
+    </div>
+ 
+    <div class="card fade" data-cat="cultura naturaleza">
+      <div class="card-img"><img src="El-acuario-de-Veracruz-ahora-Aquarium.webp" alt="Acuario" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Cultura</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Acuario de Veracruz</h3>
+        <p class="card-desc">Conoce diferentes especies marinas y disfruta de exhibiciones interactivas en uno de los acuarios más grandes de México.</p>
+        <div class="card-addr"><span class="pin">📍</span>Blvd. Manuel Ávila Camacho S/n, Ricardo Flores Magón, 91900 Veracruz, Ver.</div>
+      </div>
+    </div>
+ 
+    <div class="card fade" data-cat="cultura">
+      <div class="card-img"><img src="ulua.png" alt="San Juan de Ulúa" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Historia</span></div>
+      <div class="card-body">
+        <h3 class="card-title">San Juan de Ulúa</h3>
+        <p class="card-desc">Construido en 1535, fue clave para el comercio del virreinato. Testigo de la intervención francesa de 1838 y las estadounidenses de 1847 y 1914.</p>
+        <div class="card-addr"><span class="pin">📍</span>Cam. Escénico a San Juan de Ulúa S/N, Manuel Contreras, 91891 Veracruz, Ver.</div>
+      </div>
+    </div>
+ 
+    <div class="card fade" data-cat="gastronomia">
+      <div class="card-img"><img src="villa_rica.jpg" alt="Mariscos Villarica" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Mariscos</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Mariscos Villarica</h3>
+        <p class="card-desc">Auténticos mariscos frescos de Veracruz a la orilla de la playa. Una de nuestras paradas favoritas — no te la puedes perder.</p>
+        <div class="card-addr"><span class="pin">📍</span>C. Mocambo 527, Playa de Oro, 94290 Boca del Río, Ver. (sucursal favorita)</div>
+      </div>
+    </div>
+ 
+    <div class="card fade" data-cat="naturaleza aventura">
+      <div class="card-img"><img src="mandinga.jpg" alt="Laguna de Mandinga" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Naturaleza</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Laguna de Mandinga</h3>
+        <p class="card-desc">Hermoso cuerpo de agua para paseos en lancha, kayak y pesca. Rodeado de manglares y naturaleza tranquila.</p>
+        <div class="card-addr"><span class="pin">📍</span>Carr. Mandinga, 95266 Antón Lizardo, Ver.</div>
+      </div>
+    </div>
+ 
+    <div class="card fade" data-cat="gastronomia">
+      <div class="card-img"><img src="parroquia.webp" alt="La Parroquia" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Café & Restaurante</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Restaurante La Parroquia</h3>
+        <p class="card-desc">Famoso por su café y ambiente tradicional. Un lugar imperdible con décadas de historia veracruzana.</p>
+        <div class="card-addr"><span class="pin">📍</span>Sucursales: Gabriel Garzón Cossa 212, Reforma · Av. Valentín Gómez Farías 34, Faros (la más tradicional)</div>
+      </div>
+    </div>
+ 
+    <div class="card fade" data-cat="gastronomia">
+      <div class="card-img"><img src="farolitos.jpg" alt="Farolitos" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Cocina Mexicana</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Restaurante Farolitos</h3>
+        <p class="card-desc">Especialidad en cocina mexicana. Ideal para probar platillos típicos de Veracruz en un ambiente local auténtico.</p>
+        <div class="card-addr"><span class="pin">📍</span>Av Cristóbal Colón 506, Reforma, 91919 Veracruz, Ver. (sucursal favorita)</div>
+      </div>
+    </div>
+ 
+    <div class="card fade" data-cat="naturaleza aventura">
+      <div class="card-img"><img src="roca_partida.png" alt="Roca Partida" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Naturaleza</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Roca Partida</h3>
+        <p class="card-desc">Formación rocosa con acantilados, playas solitarias y aguas cristalinas. Perfecta para senderismo, fotografía y snorkel.</p>
+        <div class="card-addr"><span class="pin">📍</span>Punta Roca Partida, 95802 Ver.</div>
+      </div>
+    </div>
+ 
+    <div class="card card-wide fade" data-cat="naturaleza aventura">
+      <div class="card-img"><img src="chachalacas.png" alt="Playa Chachalacas" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Playa & Dunas</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Playa Chachalacas</h3>
+        <p class="card-desc">Destino único famoso por sus extensas dunas de arena. Practica sandboarding, cuatrimotos y recorridos todo terreno en un paisaje espectacular al norte de Veracruz.</p>
+        <div class="card-addr"><span class="pin">📍</span>Playa Chachalacas, 91666 Ver.</div>
+      </div>
+    </div>
+ 
+    <div class="card fade" data-cat="gastronomia">
+      <div class="card-img"><img src="cuatro.png" alt="Cuatro Hermanos" onerror="this.parentElement.style.background='#ffd6d7';this.remove()"/><span class="card-badge">Antojitos</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Restaurante Cuatro Hermanos</h3>
+        <p class="card-desc">Antojitos tradicionales veracruzanos: picadas, gorditas y empanadas. El sabor auténtico de la región en un ambiente familiar.</p>
+        <div class="card-addr"><span class="pin">📍</span>Bv. Adolfo Ruíz Cortines esq, Costa Verde, Ver.</div>
+      </div>
+    </div>
+ 
+  </div>
+</section>
+ 
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html">Hospedaje <span>Hermoso</span></a>
+        <p>Alojamientos cuidados con amor en Veracruz e Ixmiquilpan. Superanfitrión con atención personalizada 24/7.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Propiedades</h5>
+        <ul>
+          <li><a href="https://www.airbnb.com/slink/GZ822FUJ" target="_blank">Depa Boca del Río</a></li>
+          <li><a href="https://www.airbnb.com/slink/2lsUU4LP" target="_blank">Casa Grande Ixmiquilpan</a></li>
+          <li><a href="https://www.airbnb.com/slink/BYZFdjDk" target="_blank">Casa Pequeña Ixmiquilpan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Destinos</h5>
+        <ul>
+          <li><a href="actividades.html">Boca del Río</a></li>
+          <li><a href="actividades_ixm.html">Ixmiquilpan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="https://wa.me/5951219281" target="_blank">WhatsApp directo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Mis Propiedades en Airbnb. Todos los derechos reservados.</span>
+      <span>Hecho con ❤️ desde Veracruz</span>
+    </div>
+  </div>
+</footer>
+ 
+<a href="https://wa.me/5951219281" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Escríbenos</span>
+</a>
+ 
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', scrollY > 20);
+  });
+ 
+  function filterCards(cat, btn) {
+    document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('[data-cat]');
+    let visible = 0;
+    cards.forEach(c => {
+      const show = cat === 'all' || c.dataset.cat.includes(cat);
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    document.getElementById('fCount').textContent = visible + (visible === 1 ? ' lugar' : ' lugares');
+  }
+ 
+  const io = new IntersectionObserver(es => {
+    es.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('on'), i * 60);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
-
 
 
