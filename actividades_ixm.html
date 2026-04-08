@@ -1,257 +1,400 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cosas que hacer en Ixmiquilpan</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de tener el archivo CSS enlazado -->
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
-            margin: 0;
-            padding: 0;
-            color: #333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qué hacer en Ixmiquilpan · Hospedaje Hermoso</title>
+  <meta name="description" content="Descubre las mejores atracciones, balnearios y restaurantes en Ixmiquilpan, Hidalgo. Guía completa para huéspedes de Hospedaje Hermoso." />
+  <meta name="keywords" content="Ixmiquilpan, Hidalgo, atracciones, qué hacer, turismo, balnearios, aguas termales, Tolantongo" />
+  <meta property="og:title" content="Qué hacer en Ixmiquilpan · Hospedaje Hermoso" />
+  <meta property="og:description" content="Aguas termales, barrancas y auténtica gastronomía otomí. Guía de atracciones en Ixmiquilpan, Hidalgo." />
+  <meta property="og:type" content="website" />
 
-        header {
-            background-color: #007acc;
-            color: white;
-            padding: 40px 20px;
-            position: relative;
-            text-align: center; /* Centra el título */
-        }
-        
-        header h1 {
-            margin: 0;
-            font-size: 1.8em;
-            font-weight: bold;
-        }
-        
-        nav {
-            position: absolute;
-            left: 20px; /* Alinea el botón a la izquierda */
-            top: 50%;
-            transform: translateY(-50%); /* Centra verticalmente el botón en la barra */
-        }
-        
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 20px;
-            border: 2px solid white;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        
-        nav a:hover {
-            background-color: white;
-            color: #007acc;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,700;0,900;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
-        #actividades {
-            text-align: center;
-            margin-top: 20px;
-        }
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --rose: #ff5a5f; --rose-dk: #e03f44; --rose-lt: #fff0f0;
+      --cream: #fef9f4; --sand: #f5efe6;
+      --ink: #1a1a2e; --mid: #4a5568; --muted: #8a9ab5; --white: #ffffff;
+      --r: 16px; --rl: 24px;
+      --sh: 0 4px 20px rgba(0,0,0,0.08); --shl: 0 16px 48px rgba(0,0,0,0.14);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; }
 
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(254,249,244,0.9); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(0,0,0,0.07); transition: box-shadow .3s; }
+    nav.scrolled { box-shadow: var(--sh); }
+    .nav-inner { max-width: 1180px; margin: 0 auto; padding: 0 28px; height: 66px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 900; color: var(--rose); text-decoration: none; }
+    .nav-logo span { color: var(--ink); font-weight: 700; }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .nav-back { display: inline-flex; align-items: center; gap: 7px; font-size: 0.85rem; font-weight: 600; color: var(--mid); text-decoration: none; padding: 8px 16px; border-radius: 50px; border: 1.5px solid rgba(0,0,0,0.12); transition: all .2s; }
+    .nav-back:hover { background: var(--rose); color: white; border-color: var(--rose); }
+    .wa-nav { display: flex; align-items: center; gap: 7px; background: #25D366; color: white; padding: 9px 18px; border-radius: 50px; font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: background .2s, transform .15s; }
+    .wa-nav:hover { background: #1fb958; transform: translateY(-1px); }
+    .wa-nav svg { width: 16px; height: 16px; fill: white; }
 
-        .property {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    .page-hero { padding-top: 66px; min-height: 52vh; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+    .hero-left { background: linear-gradient(155deg, #ff5a5f 0%, #c73b40 100%); display: flex; flex-direction: column; justify-content: center; padding: 72px 56px; position: relative; overflow: hidden; }
+    .hero-left::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; background: rgba(255,255,255,0.07); }
+    .hero-left::after { content: ''; position: absolute; bottom: -50px; left: -50px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.05); }
+    .hero-kicker { font-size: 0.72rem; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+    .hero-title { font-family: 'Fraunces', serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 900; line-height: 1.1; color: white; margin-bottom: 18px; }
+    .hero-title em { font-style: italic; opacity: .85; }
+    .hero-sub { font-size: 0.98rem; color: rgba(255,255,255,0.75); font-weight: 300; max-width: 360px; line-height: 1.75; margin-bottom: 32px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 9px; }
+    .hpill { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.25); color: white; padding: 5px 13px; border-radius: 50px; font-size: 0.78rem; font-weight: 500; }
+    .hero-right { position: relative; overflow: hidden; background: #b8cfc4; }
+    .hero-right img { width: 100%; height: 100%; object-fit: cover; opacity: .85; transition: transform 8s ease; }
+    .hero-right:hover img { transform: scale(1.04); }
+    .hero-right::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(199,59,64,.5) 0%, transparent 40%); pointer-events: none; }
+    .hero-count { position: absolute; bottom: 24px; right: 24px; z-index: 5; background: white; border-radius: var(--r); padding: 14px 20px; display: flex; align-items: center; gap: 16px; box-shadow: var(--shl); animation: bob 3.5s ease-in-out infinite; }
+    @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    .hc-num { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 900; color: var(--rose); line-height: 1; }
+    .hc-lbl { font-size: 0.67rem; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; }
+    .hc-div { width: 1px; height: 32px; background: rgba(0,0,0,.1); }
 
-        .property:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
+    .filter-bar { background: var(--white); border-bottom: 1px solid rgba(0,0,0,.07); position: sticky; top: 66px; z-index: 80; }
+    .filter-inner { max-width: 1180px; margin: 0 auto; padding: 0 28px; display: flex; align-items: center; gap: 10px; height: 58px; overflow-x: auto; scrollbar-width: none; }
+    .filter-inner::-webkit-scrollbar { display: none; }
+    .f-btn { flex-shrink: 0; padding: 7px 17px; border-radius: 50px; border: 1.5px solid rgba(0,0,0,.12); background: transparent; color: var(--mid); font-family: 'Outfit', sans-serif; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: all .2s; white-space: nowrap; }
+    .f-btn:hover, .f-btn.active { background: var(--rose); color: white; border-color: var(--rose); }
+    .f-count { margin-left: auto; flex-shrink: 0; font-size: 0.8rem; color: var(--muted); font-weight: 500; }
 
-        .property img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
+    #actividades { padding: 80px 28px 100px; }
+    .section-head { max-width: 1180px; margin: 0 auto 52px; }
+    .s-tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rose); margin-bottom: 10px; }
+    .s-title { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 900; color: var(--ink); line-height: 1.15; margin-bottom: 12px; }
+    .s-sub { font-size: 0.95rem; color: var(--muted); max-width: 480px; }
+    .cards-grid { max-width: 1180px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+    .card { background: var(--white); border-radius: var(--rl); overflow: hidden; box-shadow: var(--sh); transition: transform .3s, box-shadow .3s; display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-8px); box-shadow: var(--shl); }
+    .card-img { position: relative; height: 210px; overflow: hidden; background: #c8ddd5; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; display: block; }
+    .card:hover .card-img img { transform: scale(1.08); }
+    .card-badge { position: absolute; top: 13px; left: 13px; background: white; color: var(--rose); font-size: 0.68rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; padding: 4px 11px; border-radius: 50px; }
+    .card-body { padding: 22px 24px 26px; flex: 1; display: flex; flex-direction: column; }
+    .card-title { font-family: 'Fraunces', serif; font-size: 1.1rem; font-weight: 700; color: var(--ink); margin-bottom: 9px; line-height: 1.25; }
+    .card-desc { font-size: 0.84rem; color: var(--mid); line-height: 1.7; flex: 1; margin-bottom: 16px; }
+    .card-addr { display: flex; align-items: flex-start; gap: 7px; font-size: 0.77rem; color: var(--muted); padding-top: 14px; border-top: 1px solid rgba(0,0,0,.07); }
+    .card-addr .pin { color: var(--rose); font-size: 0.88rem; flex-shrink: 0; margin-top: 1px; }
+    .card-addr a { color: var(--rose); font-weight: 600; text-decoration: none; }
+    .card-addr a:hover { text-decoration: underline; }
+    .card-wide { grid-column: span 2; }
+    .card-wide .card-img { height: 240px; }
 
-        .property h2 {
-            color: #ff5a5f;
-            font-size: 1.5em;
-            margin: 15px 0 10px;
-        }
+    footer { background: var(--ink); color: rgba(255,255,255,.5); padding: 60px 28px 36px; }
+    .footer-inner { max-width: 1180px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; margin-bottom: 48px; }
+    .footer-brand { max-width: 300px; }
+    .footer-logo { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 900; color: white; text-decoration: none; display: block; margin-bottom: 12px; }
+    .footer-logo span { color: var(--rose); }
+    .footer-brand p { font-size: 0.83rem; line-height: 1.7; }
+    .footer-col h5 { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255,255,255,.85); margin-bottom: 18px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col ul a { font-size: 0.83rem; color: rgba(255,255,255,.45); text-decoration: none; transition: color .2s; }
+    .footer-col ul a:hover { color: rgba(255,90,95,.8); }
+    .footer-bottom { display: flex; justify-content: space-between; padding-top: 28px; border-top: 1px solid rgba(255,255,255,.08); font-size: 0.78rem; flex-wrap: wrap; gap: 10px; }
 
-        .property p {
-            padding: 0 15px;
-            font-size: 1em;
-            color: #555;
-        }
+    .wa-float { position: fixed; bottom: 26px; right: 26px; z-index: 999; display: flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 13px 20px 13px 14px; border-radius: 50px; text-decoration: none; font-size: 0.85rem; font-weight: 600; box-shadow: 0 6px 28px rgba(37,211,102,.4); transition: transform .2s; animation: wpulse 2.8s ease-in-out infinite; }
+    .wa-float:hover { transform: translateY(-3px) scale(1.03); animation: none; }
+    .wa-float svg { width: 22px; height: 22px; fill: white; }
+    @keyframes wpulse { 0%,100% { box-shadow: 0 6px 28px rgba(37,211,102,.4); } 50% { box-shadow: 0 6px 40px rgba(37,211,102,.65); } }
 
-        .property strong {
-            color: #007acc;
-            font-weight: bold;
-        }
+    .fade { opacity: 0; transform: translateY(22px); transition: opacity .6s ease, transform .6s ease; }
+    .fade.on { opacity: 1; transform: translateY(0); }
 
-        footer {
-            background-color: #007acc;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 1em;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .property {
-                width: 90%;
-            }
-        }
-    </style>
+    @media (max-width: 960px) {
+      .page-hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 72px 32px 56px; }
+      .hero-right { height: 300px; }
+      .cards-grid { grid-template-columns: 1fr 1fr; }
+      .card-wide { grid-column: span 1; }
+    }
+    @media (max-width: 600px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .wa-float span { display: none; }
+      .wa-float { padding: 13px; border-radius: 50%; }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Atracciones en Ixmiquilpan, Hidalgo</h1>
-        <nav>
-            <a href="index.html">Menú</a>
-        </nav>
-    </header>
 
-    <section id="actividades">
-        <h2 style="margin-top: 20px;">Actividades en Ixmiquilpan</h2>
-        <div class="container">
-            <!-- Templo y exconvento de San Miguel Arcángel -->
-            <div class="property">
-                <h2>Templo y exconvento de San Miguel Arcángel</h2>
-                <img src="iglesia_ixmi.png" alt="Templo y exconvento de San Miguel Arcángel">
-                <p>Descubre la historia y majestuosidad del Templo y exconvento de San Miguel Arcángel, una joya arquitectónica del siglo XVI. Construido por los agustinos, este impresionante edificio tipo fortaleza se encuentra en el corazón de Ixmiquilpan, ofreciendo un vistazo al pasado y una atmósfera de paz ideal para la reflexión.</p>
-                <p><strong>Ubicación:</strong> Ave. Felipe Ángeles y Nicolás Romero, 42300, Ixmiquilpan, Hidalgo</p>
-            </div>
+<nav id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">Hospedaje <span>Hermoso</span></a>
+    <div class="nav-right">
+      <a class="nav-back" href="index.html">← Inicio</a>
+      <a class="wa-nav" href="https://wa.me/5951219281" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
 
-            <!-- Barbacoa Hermanos Santiago -->
-            <div class="property">
-                <h2>Barbacoa Hermanos Santiago</h2>
-                <img src="barbacoasan.png" alt="Barbacoa Hermanos Santiago">
-                <p>Degusta la auténtica barbacoa hidalguense en Barbacoa Hermanos Santiago, ubicada en el tradicional mercado de Morelos. Este lugar es ideal para experimentar los sabores genuinos de la región en un ambiente local y lleno de vida.</p>
-                <p><strong>Ubicación:</strong> Mercado Morelos, Local 32, Centro, 42300 Ixmiquilpan, Hgo.</p>
-            </div>
+<section class="page-hero">
+  <div class="hero-left">
+    <p class="hero-kicker">Guía de viajero · Hidalgo</p>
+    <h1 class="hero-title">Lo mejor de<br/><em>Ixmiquilpan</em></h1>
+    <p class="hero-sub">Aguas termales, barrancas verdes, barbacoa auténtica y tradiciones otomíes. Todo lo que necesitas para vivir Hidalgo de verdad.</p>
+    <div class="hero-pills">
+      <span class="hpill">♨️ Termales</span>
+      <span class="hpill">🏊 Balnearios</span>
+      <span class="hpill">🍖 Barbacoa</span>
+      <span class="hpill">🏛 Cultura</span>
+      <span class="hpill">🌿 Naturaleza</span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="centroixm.png" alt="Ixmiquilpan Hidalgo" />
+    <div class="hero-count">
+      <div><div class="hc-num">14</div><div class="hc-lbl">Lugares</div></div>
+      <div class="hc-div"></div>
+      <div><div class="hc-num">5+</div><div class="hc-lbl">Balnearios</div></div>
+      <div class="hc-div"></div>
+      <div><div class="hc-num">4</div><div class="hc-lbl">Restaurantes</div></div>
+    </div>
+  </div>
+</section>
 
-            <!-- Pocitas Lajas Rojas -->
-            <div class="property">
-                <h2>Pocitas Lajas Rojas</h2>
-                <img src="lajas.png" alt="Pocitas Lajas Rojas">
-                <p>Sumérgete en el paraíso escondido de Pocitas Lajas Rojas, un lugar con aguas termales y una atmósfera íntima. Este rincón secreto ofrece una experiencia relajante rodeada de aguas cristalinas, ideal para quienes buscan paz y tranquilidad lejos de la multitud.</p>
-                <p><strong>Ubicación:</strong> Ixmiquilpan, Hidalgo</p>
-            </div>
+<div class="filter-bar">
+  <div class="filter-inner">
+    <button class="f-btn active" onclick="filterCards('all',this)">Todos</button>
+    <button class="f-btn" onclick="filterCards('termales',this)">♨️ Termales</button>
+    <button class="f-btn" onclick="filterCards('naturaleza',this)">🌿 Naturaleza</button>
+    <button class="f-btn" onclick="filterCards('cultura',this)">🏛 Cultura</button>
+    <button class="f-btn" onclick="filterCards('gastronomia',this)">🍽 Gastronomía</button>
+    <button class="f-btn" onclick="filterCards('compras',this)">🛍 Compras</button>
+    <span class="f-count" id="fCount">14 lugares</span>
+  </div>
+</div>
 
-            <!-- Quesos El Refugio -->
-            <div class="property">
-                <h2>Quesos El Refugio</h2>
-                <img src="quesos.png" alt="Quesos El Refugio">
-                <p>Quesos artesanales 100% leche de vaca. Descubre el sabor y la calidad de los quesos tradicionales elaborados localmente, ideales para los amantes de los lácteos.</p>
-                <p><strong>Ubicación:</strong> Pablo Galeana #6, Col. Miguel Hidalgo, Ixmiquilpan, Hidalgo 42300</p>
-                <p><strong>Red Social:</strong> <a href="https://www.instagram.com/quesos.elrefugio/" target="_blank">Instagram de Quesos El Refugio</a></p>
-            </div>
+<section id="actividades">
+  <div class="section-head fade">
+    <p class="s-tag">Atracciones seleccionadas</p>
+    <h2 class="s-title">Descubre Ixmiquilpan</h2>
+    <p class="s-sub">Nuestras recomendaciones personales para aprovechar al máximo tu estancia en Hidalgo.</p>
+  </div>
 
-            <!-- Grutas de Tolantongo -->
-            <div class="property">
-                <h2>Grutas de Tolantongo</h2>
-                <img src="tola.jpg" alt="Grutas de Tolantongo">
-                <p>Un paraíso natural lleno de aguas termales y espectaculares paisajes. Las grutas ofrecen una experiencia única con sus piscinas naturales, cascadas, y senderos para explorar. Ideal para relajarse y disfrutar de la naturaleza en su máxima expresión.</p>
-                <p><strong>Ubicación:</strong> San Cristóbal S/N Ejido San Cristóbal, 42375 Cardonal, Hgo.</p>
-            </div>
+  <div class="cards-grid" id="cardsGrid">
 
-            <!-- Balneario Valle Paraíso -->
-            <div class="property">
-                <h2>Balneario Valle Paraíso</h2>
-                <img src="paraiso.jpg" alt="Balneario Valle Paraíso">
-                <p>Un hermoso lugar para disfrutar de aguas termales, piscinas y zonas recreativas para toda la familia. Ideal para relajarse y pasar un día lleno de diversión rodeado de la naturaleza de Ixmiquilpan.</p>
-                <p><strong>Ubicación:</strong> Mexico - Laredo Km. 154, 42300 Ixmiquilpan, Hgo.</p>
-            </div>
+    <!-- Tolantongo WIDE -->
+    <div class="card card-wide fade" data-cat="termales naturaleza">
+      <div class="card-img"><img src="tola.jpg" alt="Grutas de Tolantongo" /><span class="card-badge">Imperdible</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Grutas de Tolantongo</h3>
+        <p class="card-desc">Paraíso natural con aguas termales, piscinas naturales, cascadas y senderos espectaculares. La joya de Hidalgo y una de las maravillas naturales más impresionantes de México. Ideal para relajarse y explorar la naturaleza en su máxima expresión.</p>
+        <div class="card-addr"><span class="pin">📍</span>San Cristóbal S/N Ejido San Cristóbal, 42375 Cardonal, Hgo.</div>
+      </div>
+    </div>
 
-            <!-- Parque acuático El Tephé -->
-            <div class="property">
-                <h2>Parque acuático El Tephé</h2>
-                <img src="tephe.jpg" alt="Parque acuático El Tephé">
-                <p>Parque acuático extenso con toboganes gigantes, piscina de olas, piscina para niños pequeños y un hotel. Es el balneario favorito para pasar un día lleno de diversiones acuáticas.</p>
-                <p><strong>Ubicación:</strong> Carretera México-Laredo Km.152, Ixmiquilpan, Hidalgo</p>
-                <p><strong>Costo General:</strong> 150 pesos</p>
-            </div>
+    <!-- Templo -->
+    <div class="card fade" data-cat="cultura">
+      <div class="card-img"><img src="iglesia_ixmi.png" alt="Templo San Miguel Arcángel" /><span class="card-badge">Historia</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Templo y Exconvento de San Miguel Arcángel</h3>
+        <p class="card-desc">Joya arquitectónica del siglo XVI construida por los agustinos. Este edificio tipo fortaleza en el corazón de Ixmiquilpan ofrece un vistazo al pasado colonial y una atmósfera de paz única.</p>
+        <div class="card-addr"><span class="pin">📍</span>Ave. Felipe Ángeles y Nicolás Romero, 42300, Ixmiquilpan, Hgo.</div>
+      </div>
+    </div>
 
-            <!-- Santa Cruz El Maye -->
-            <div class="property">
-                <h2>Santa Cruz El Maye</h2>
-                <img src="cerro.png" alt="Santa Cruz El Maye">
-                <p>Excelente lugar para ir a caminar, correr o hacer ciclismo. Por la tarde es muy concurrido. Puedes llevar tus perritos, pero procura llevar correa. Ofrece vistas hermosas que permiten disfrutar de la naturaleza y hacer ejercicio.</p>
-                <p><strong>Ubicación:</strong> Cerro de la Santa Cruz, El Maye, Ixmiquilpan, Hgo.</p>
-            </div>
+    <!-- Lajas Rojas -->
+    <div class="card fade" data-cat="termales naturaleza">
+      <div class="card-img"><img src="lajas.png" alt="Pocitas Lajas Rojas" /><span class="card-badge">Termales</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Pocitas Lajas Rojas</h3>
+        <p class="card-desc">Paraíso escondido con aguas termales e íntima atmósfera. Aguas cristalinas en un rincón secreto ideal para quienes buscan paz y tranquilidad lejos de la multitud.</p>
+        <div class="card-addr"><span class="pin">📍</span>Ixmiquilpan, Hidalgo</div>
+      </div>
+    </div>
 
-            <!-- Jamädi -->
-            <div class="property">
-                <h2>Jamädi</h2>
-                <img src="jamadi.png" alt="Jamädi">
-                <p>Jamädi es el lugar perfecto para disfrutar de una tarde o noche relajante en Ixmiquilpan. Buena música, deliciosa comida y un servicio cálido que hará que tu experiencia sea inolvidable.</p>
-                <p><strong>Ubicación:</strong> Av. Insurgentes Ote., Miguel Hidalgo, 42302 Ixmiquilpan, Hgo.</p>
-            </div>
+    <!-- Tephé WIDE -->
+    <div class="card card-wide fade" data-cat="termales">
+      <div class="card-img"><img src="tephe.jpg" alt="Parque acuático El Tephé" /><span class="card-badge">Balneario</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Parque Acuático El Tephé</h3>
+        <p class="card-desc">El balneario favorito de la región. Toboganes gigantes, piscina de olas, área para niños pequeños y hotel. Un día completo de diversión acuática para toda la familia en el corazón de Ixmiquilpan.</p>
+        <div class="card-addr"><span class="pin">📍</span>Carretera México-Laredo Km. 152, Ixmiquilpan, Hidalgo · Costo general: $150 pesos</div>
+      </div>
+    </div>
 
-            <!-- Plaza Insurgentes Ixmiquilpan -->
-            <div class="property">
-                <h2>Plaza Insurgentes Ixmiquilpan</h2>
-                <img src="soriana.png" alt="Plaza Insurgentes Ixmiquilpan">
-                <p>Plaza comercial con variedad de tiendas comerciales y un cine. Un buen lugar para ir de compras y disfrutar de una película.</p>
-                <p><strong>Ubicación:</strong> C. Benito Juárez 150, 42300 Ixmiquilpan, Hgo.</p>
-            </div>
+    <!-- Valle Paraíso -->
+    <div class="card fade" data-cat="termales">
+      <div class="card-img"><img src="paraiso.jpg" alt="Balneario Valle Paraíso" /><span class="card-badge">Balneario</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Balneario Valle Paraíso</h3>
+        <p class="card-desc">Aguas termales, piscinas y zonas recreativas para toda la familia. Un día relajante rodeado de la naturaleza verde de Ixmiquilpan.</p>
+        <div class="card-addr"><span class="pin">📍</span>Mexico - Laredo Km. 154, 42300 Ixmiquilpan, Hgo.</div>
+      </div>
+    </div>
 
-            <!-- Parque Ecoalberto -->
-            <div class="property">
-                <h2>Parque Ecoalberto</h2>
-                <img src="eco.png" alt="Parque Ecoalberto">
-                <p>Parque acuático con piscinas y toboganes, y un parque de aventuras para hacer kayakismo, tirolesa y más. Un lugar perfecto para quienes buscan adrenalina y naturaleza.</p>
-                <p><strong>Ubicación:</strong> Avenida Cantinela Km 8, El Alberto, 42323 Ixmiquilpan, Hgo.</p>
-            </div>
+    <!-- Ecoalberto -->
+    <div class="card fade" data-cat="naturaleza termales">
+      <div class="card-img"><img src="eco.png" alt="Parque Ecoalberto" /><span class="card-badge">Aventura</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Parque Ecoalberto</h3>
+        <p class="card-desc">Parque acuático con piscinas y toboganes, más un parque de aventuras con kayakismo, tirolesa y más. Para quienes buscan adrenalina y naturaleza en un solo lugar.</p>
+        <div class="card-addr"><span class="pin">📍</span>Avenida Cantinela Km 8, El Alberto, 42323 Ixmiquilpan, Hgo.</div>
+      </div>
+    </div>
 
-            <!-- Ricos Tlacoyos -->
-            <div class="property">
-                <h2>Ricos Tlacoyos</h2>
-                <img src="tlaco.jpg" alt="Ricos Tlacoyos">
-                <p>Un lugar ideal para probar los tradicionales tlacoyos de Hidalgo, preparados con ingredientes frescos y llenos de sabor.</p>
-                <p><strong>Ubicación:</strong> A la altura de Eucalipto 5, Los Nogales, 42302 Ixmiquilpan, Hgo.</p>
-            </div>
+    <!-- Santa Cruz El Maye -->
+    <div class="card fade" data-cat="naturaleza">
+      <div class="card-img"><img src="cerro.png" alt="Santa Cruz El Maye" /><span class="card-badge">Naturaleza</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Santa Cruz El Maye</h3>
+        <p class="card-desc">Excelente para caminar, correr o hacer ciclismo. Muy concurrido por las tardes. Se permiten mascotas con correa. Vistas hermosas desde el cerro de la Santa Cruz.</p>
+        <div class="card-addr"><span class="pin">📍</span>Cerro de la Santa Cruz, El Maye, Ixmiquilpan, Hgo.</div>
+      </div>
+    </div>
 
-            <!-- Restaurant Gourmet Mä-Hay Grill & Restaurant -->
-            <div class="property">
-                <h2>Restaurant Gourmet Mä-Hay Grill & Restaurant</h2>
-                <img src="restaurant_may.png" alt="Restaurant Mä-Hay Grill & Restaurant">
-                <p>Un restaurante gourmet donde podrás disfrutar de platillos exclusivos, preparados con ingredientes de alta calidad y con un excelente servicio. Ideal para una comida especial.</p>
-                <p><strong>Ubicación:</strong> Cda Mariano Sánchez 246, Los Nogales, 42302 Ixmiquilpan, Hgo.</p>
-            </div>
+    <!-- Barbacoa Hermanos Santiago -->
+    <div class="card fade" data-cat="gastronomia">
+      <div class="card-img"><img src="barbacoasan.png" alt="Barbacoa Hermanos Santiago" /><span class="card-badge">Gastronomía</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Barbacoa Hermanos Santiago</h3>
+        <p class="card-desc">Auténtica barbacoa hidalguense en el tradicional mercado de Morelos. Sabores genuinos de la región en un ambiente local y lleno de vida. Una experiencia gastronómica imperdible.</p>
+        <div class="card-addr"><span class="pin">📍</span>Mercado Morelos, Local 32, Centro, 42300 Ixmiquilpan, Hgo.</div>
+      </div>
+    </div>
 
-            <!-- Restaurante Barbacoa Carlitos -->
-            <div class="property">
-                <h2>Restaurante "Barbacoa Carlitos"</h2>
-                <img src="barbaca.png" alt="Restaurante Barbacoa Carlitos">
-                <p>Exquisita barbacoa y platillos típicos de la región, buena atención e higienico. Un lugar perfecto para disfrutar de los sabores auténticos de la región.</p>
-                <p><strong>Ubicación:</strong> Carretera México Laredo km 69.5, Dios Padre, El Valante, Hgo.</p>
-            </div>
-        </div>
-    </section>
+    <!-- Barbacoa Carlitos -->
+    <div class="card fade" data-cat="gastronomia">
+      <div class="card-img"><img src="barbaca.png" alt="Barbacoa Carlitos" /><span class="card-badge">Gastronomía</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Restaurante "Barbacoa Carlitos"</h3>
+        <p class="card-desc">Exquisita barbacoa y platillos típicos de la región, buena atención e higiénico. Un lugar perfecto para los auténticos sabores del Valle del Mezquital.</p>
+        <div class="card-addr"><span class="pin">📍</span>Carretera México Laredo km 69.5, Dios Padre, El Valante, Hgo.</div>
+      </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 Mis Propiedades en Airbnb. Todos los derechos reservados.</p>
-    </footer>
+    <!-- Ricos Tlacoyos -->
+    <div class="card fade" data-cat="gastronomia">
+      <div class="card-img"><img src="tlaco.jpg" alt="Ricos Tlacoyos" /><span class="card-badge">Antojitos</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Ricos Tlacoyos</h3>
+        <p class="card-desc">Tradicionales tlacoyos de Hidalgo preparados con ingredientes frescos y llenos de sabor. Un clásico local que no te puedes perder.</p>
+        <div class="card-addr"><span class="pin">📍</span>A la altura de Eucalipto 5, Los Nogales, 42302 Ixmiquilpan, Hgo.</div>
+      </div>
+    </div>
+
+    <!-- Mä-Hay -->
+    <div class="card fade" data-cat="gastronomia">
+      <div class="card-img"><img src="restaurant_may.png" alt="Mä-Hay Grill" /><span class="card-badge">Gourmet</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Mä-Hay Grill & Restaurant</h3>
+        <p class="card-desc">Restaurante gourmet con platillos exclusivos, ingredientes de alta calidad y excelente servicio. La opción ideal para una cena especial en Ixmiquilpan.</p>
+        <div class="card-addr"><span class="pin">📍</span>Cda Mariano Sánchez 246, Los Nogales, 42302 Ixmiquilpan, Hgo.</div>
+      </div>
+    </div>
+
+    <!-- Jamädi -->
+    <div class="card fade" data-cat="gastronomia">
+      <div class="card-img"><img src="jamadi.png" alt="Jamädi" /><span class="card-badge">Bar & Cocina</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Jamädi</h3>
+        <p class="card-desc">El lugar perfecto para una tarde o noche relajante. Buena música, deliciosa comida y servicio cálido que hará tu experiencia inolvidable en Ixmiquilpan.</p>
+        <div class="card-addr"><span class="pin">📍</span>Av. Insurgentes Ote., Miguel Hidalgo, 42302 Ixmiquilpan, Hgo.</div>
+      </div>
+    </div>
+
+    <!-- Quesos El Refugio -->
+    <div class="card fade" data-cat="gastronomia compras">
+      <div class="card-img"><img src="quesos.png" alt="Quesos El Refugio" /><span class="card-badge">Artesanal</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Quesos El Refugio</h3>
+        <p class="card-desc">Quesos artesanales 100% leche de vaca. Sabor y calidad de los lácteos tradicionales elaborados localmente. Perfectos para llevar como recuerdo.</p>
+        <div class="card-addr"><span class="pin">📍</span>Pablo Galeana #6, Col. Miguel Hidalgo, Ixmiquilpan, Hgo · <a href="https://www.instagram.com/quesos.elrefugio/" target="_blank">Instagram</a></div>
+      </div>
+    </div>
+
+    <!-- Plaza Insurgentes -->
+    <div class="card fade" data-cat="compras">
+      <div class="card-img"><img src="soriana.png" alt="Plaza Insurgentes" /><span class="card-badge">Compras</span></div>
+      <div class="card-body">
+        <h3 class="card-title">Plaza Insurgentes Ixmiquilpan</h3>
+        <p class="card-desc">Plaza comercial con variedad de tiendas y un cine. Un buen lugar para ir de compras y disfrutar de una película después de un día de turismo.</p>
+        <div class="card-addr"><span class="pin">📍</span>C. Benito Juárez 150, 42300 Ixmiquilpan, Hgo.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-logo" href="index.html">Hospedaje <span>Hermoso</span></a>
+        <p>Alojamientos cuidados con amor en Veracruz e Ixmiquilpan. Superanfitrión con atención personalizada 24/7.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Propiedades</h5>
+        <ul>
+          <li><a href="https://www.airbnb.com/slink/GZ822FUJ" target="_blank">Depa Boca del Río</a></li>
+          <li><a href="https://www.airbnb.com/slink/2lsUU4LP" target="_blank">Casa Grande Ixmiquilpan</a></li>
+          <li><a href="https://www.airbnb.com/slink/BYZFdjDk" target="_blank">Casa Pequeña Ixmiquilpan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Destinos</h5>
+        <ul>
+          <li><a href="actividades.html">Boca del Río</a></li>
+          <li><a href="actividades_ixm.html">Ixmiquilpan</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="https://wa.me/5951219281" target="_blank">WhatsApp directo</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Mis Propiedades en Airbnb. Todos los derechos reservados.</span>
+      <span>Hecho con ❤️ desde Veracruz</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5951219281" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span>Escríbenos</span>
+</a>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', scrollY > 20);
+  });
+
+  function filterCards(cat, btn) {
+    document.querySelectorAll('.f-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cards = document.querySelectorAll('[data-cat]');
+    let visible = 0;
+    cards.forEach(c => {
+      const show = cat === 'all' || c.dataset.cat.includes(cat);
+      c.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    document.getElementById('fCount').textContent = visible + (visible === 1 ? ' lugar' : ' lugares');
+  }
+
+  const io = new IntersectionObserver(es => {
+    es.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('on'), i * 60);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
 </body>
 </html>
 
